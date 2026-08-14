@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #C5A059;
+    --primary-tint: #E5C583;
+    --primary-container: #8C6D33;
+    --on-primary: #0A0A0A;
+    --error: #E58B58;
+    --error-container: #4A1A14;
+    --surface: #0A0A0A;
+    --surface-container: #111111;
+    --surface-container-high: #1A1A1A;
+    --surface-container-low: #0D0D0D;
+    --surface-container-lowest: #060606;
+    --on-surface: #E5E5E5;
+    --on-surface-variant: #A3A3A3;
+    --secondary: #D4AF37;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0A0A0A;
+    color: #E5E5E5;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Font utility aliases */
+  .font-serif-display {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-serif-editorial {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom scrollbar hiding */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Animations */
+@keyframes orbit-cw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbit-ccw {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes dash-move {
+  to { stroke-dashoffset: -1000; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 25px rgba(197, 160, 89, 0.25); filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3)); }
+  50% { box-shadow: 0 0 45px rgba(197, 160, 89, 0.5); filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.6)); }
+}
+
+@keyframes scan-radar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-orbit-slow {
+  animation: orbit-cw 20s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-ccw 14s linear infinite;
+}
+
+.animate-dash-flow {
+  animation: dash-move 20s linear infinite;
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.35);
+}
+
+.glow-gold-lg {
+  box-shadow: 0 0 35px rgba(197, 160, 89, 0.5);
+}
+
+.glow-error {
+  box-shadow: 0 0 25px rgba(229, 139, 88, 0.35);
+}
+
+/* Glassmorphism & Luxury Panel helpers */
+.glass-panel {
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-luxury {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(17, 17, 17, 0.95) 100%);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(197, 160, 89, 0.05);
+}
+
+.glass-panel-danger {
+  background: rgba(20, 15, 15, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(229, 139, 88, 0.35);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(229, 139, 88, 0.08);
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "Neural Vehicle OS",
+  "description": "Next-generation cybernetic automotive OS and AI vehicle companion with real-time diagnostics, intelligent navigation, neural persona, and remote vehicle controls.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
